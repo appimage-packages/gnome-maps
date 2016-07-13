@@ -1,9 +1,7 @@
 #!/bin/bash
 
 #get deps
-yum -y install gettext perl-URI.noarch gnome-common perl-XML-Parser readline-devel nspr-devel atk-devel \
-pango-devel gdk-pixbuf2-devel
-
+yum -y install gettext perl-URI.noarch gnome-common perl-XML-Parser readline-devel nspr-devel
 function make_dirs {
   mkdir -p "${1}"/"${1}.AppDir" || echo ""
 }
@@ -146,6 +144,27 @@ make install
 wget http://cairographics.org/releases/cairo-1.14.6.tar.xz
 tar xvf cairo-1.14.6.tar.xz
 cd cairo-1.14.6
+./configure
+make -j8
+make install
+
+wget http://ftp.gnome.org/pub/gnome/sources/atk/2.20/atk-2.20.0.tar.xz
+tar xvf atk-2.20.0.tar.xz
+cd atk-2.20.0
+./configure
+make -j8
+make install
+
+wget http://ftp.acc.umu.se/pub/gnome/sources/pango/1.37/pango-1.37.5.tar.xz
+tar xvf pango-1.37.5.tar.xz
+cd pango-1.37.5
+./configure
+make -j8
+make install
+
+wget http://ftp.gnome.org/pub/gnome/sources/gdk-pixbuf/2.34/gdk-pixbuf-2.34.0.tar.xz
+tar xvf gdk-pixbuf-2.34.0.tar.xz
+cd gdk-pixbuf-2.34.0
 ./configure
 make -j8
 make install
