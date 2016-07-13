@@ -125,11 +125,13 @@ cd gobject-introspection-1.48.0
 make -j8
 make install
 
-
 wget http://ftp.mozilla.org/pub/mozilla.org/js/mozjs-24.2.0.tar.bz2
 tar --bzip2 -xf mozjs-24.2.0.tar.bz2
 cd mozjs-24.2.0/js/src
-./configure
+SHELL=/bin/bash ./configure --enable-readline   \
+            --enable-threadsafe \
+            --with-system-ffi   \
+            --with-system-nspr
 make -j8
 make install
 
