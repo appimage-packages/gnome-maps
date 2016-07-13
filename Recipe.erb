@@ -81,7 +81,8 @@ function make_appdir {
 
 APPNAME=<%= name %>
 git clone git://git.gnome.org/<%= name %>
-VERSION=git describe | sed -e 's/-g.*$// ; s/^v//'
+VERSION=$(git describe | sed -e 's/-g.*$// ; s/^v//')
+mkdir -p $APP/$APP.AppDir
 cd "${APPNAME}.AppDir"
 extract_packages
 patch_usr
