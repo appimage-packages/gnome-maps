@@ -82,7 +82,7 @@ function make_appdir {
 APP=<%= name %>
 git clone git://git.gnome.org/<%= name %>
 cd <%= name %>
-./autogen
+./autogen.sh
 make -j8
 make install
 
