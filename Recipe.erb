@@ -83,6 +83,7 @@ function make_appdir {
 }
 
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig":$PKG_CONFIG_PATH
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:"/usr/local/lib/"
 #deps
 wget http://ftp.gnome.org/pub/GNOME/sources/intltool/0.40/intltool-0.40.3.tar.gz
 tar xfv intltool-0.40.3.tar.gz
@@ -104,7 +105,7 @@ cd pcre-8.39
 ./configure --enable-unicode-properties       \
             --enable-pcre16                   \
             --enable-pcre32                   \
-            --enable-pcregrep-libz            
+            --enable-utf8            
 make -j8
 make install
 
