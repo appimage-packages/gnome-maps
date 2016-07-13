@@ -130,8 +130,7 @@ tar --bzip2 -xf mozjs-24.2.0.tar.bz2
 cd mozjs-24.2.0/js/src
 SHELL=/bin/bash ./configure --enable-readline   \
             --enable-threadsafe \
-            --with-system-ffi   \
-            --with-system-nspr
+            --with-system-ffi   
 make -j8
 make install
 
