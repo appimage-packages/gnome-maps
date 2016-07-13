@@ -82,10 +82,18 @@ function make_appdir {
   ./AppImageAssistant* "${1}.AppDir" "${1}_${2}.AppImage"
 }
 
+export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig":$PKG_CONFIG_PATH
 #deps
 wget http://ftp.gnome.org/pub/GNOME/sources/intltool/0.40/intltool-0.40.3.tar.gz
 tar xfv intltool-0.40.3.tar.gz
 cd intltool-0.40.3
+./configure
+make -j8
+make install
+
+wget ftp://sourceware.org/pub/libffi/libffi-3.2.1.tar.gz
+tar xvf libffi-3.2.1.tar.gz
+cd libffi-3.2.1
 ./configure
 make -j8
 make install
@@ -107,7 +115,7 @@ make install
 APP=<%= name %>
 git clone git://git.gnome.org/<%= name %>
 cd <%= name %>
-ACLOCAL_FLAGS="-I /usr/share/aclocal -I /usr/local/share/aclocal" PKG_CONFIG_PATH="/usr/local/lib/pkgconfig" ./autogen.sh
+ACLOCAL_FLAGS="-I /usr/share/aclocal -I /usr/local/share/aclocal" ./autogen.sh
 make -j8
 make install
 
