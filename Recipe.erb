@@ -1,7 +1,8 @@
 #!/bin/bash
 
 #get deps
-yum -y install gettext perl-URI.noarch gnome-common perl-XML-Parser readline-devel nspr-devel
+yum -y install gettext perl-URI.noarch gnome-common perl-XML-Parser readline-devel nspr-devel atk-devel \
+pango-devel gdk-pixbuf2-devel
 
 function make_dirs {
   mkdir -p "${1}"/"${1}.AppDir" || echo ""
@@ -138,6 +139,13 @@ make install
 wget http://ftp.gnome.org/pub/gnome/sources/gjs/1.45/gjs-1.45.3.tar.xz
 tar xvf gjs-1.45.3.tar.xz
 cd gjs-1.45.3
+./configure
+make -j8
+make install
+
+wget http://cairographics.org/releases/cairo-1.14.6.tar.xz
+tar xvf cairo-1.14.6.tar.xz
+cd cairo-1.14.6
 ./configure
 make -j8
 make install
