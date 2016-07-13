@@ -155,6 +155,20 @@ cd atk-2.20.0
 make -j8
 make install
 
+http://downloads.sourceforge.net/freetype/freetype-2.6.3.tar.bz2
+tar --bzip2 -xf freetype-2.6.3.tar.bz2
+cd freetype-2.6.3
+./configure
+make -j8
+make install
+
+wget http://www.freedesktop.org/software/fontconfig/release/fontconfig-2.12.0.tar.bz2
+tar --bzip2 -xf fontconfig-2.12.0.tar.bz2
+cd fontconfig-2.12.0
+./configure
+make -j8
+make install
+
 wget http://www.freedesktop.org/software/harfbuzz/release/harfbuzz-1.2.7.tar.bz2
 tar --bzip2 -xf harfbuzz-1.2.7.tar.bz2
 cd harfbuzz-1.2.7
