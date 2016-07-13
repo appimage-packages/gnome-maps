@@ -125,6 +125,14 @@ cd gobject-introspection-1.48.0
 make -j8
 make install
 
+
+wget http://ftp.mozilla.org/pub/mozilla.org/js/mozjs-24.2.0.tar.bz2
+tar --bzip2 -xf mozjs-24.2.0.tar.bz2
+cd mozjs-24.2.0
+./configure
+make -j8
+make install
+
 wget http://ftp.gnome.org/pub/gnome/sources/gjs/1.45/gjs-1.45.3.tar.xz
 tar xvf gjs-1.45.3.tar.xz
 cd gjs-1.45.3
@@ -142,13 +150,6 @@ make install
 wget http://www.freedesktop.org/software/geoclue/releases/2.4/geoclue-2.4.3.tar.xz
 tar xvf geoclue-2.4.3.tar.xz
 cd geoclue-2.4.3
-./configure
-make -j8
-make install
-
-wget http://ftp.mozilla.org/pub/mozilla.org/js/mozjs-24.2.0.tar.bz2
-tar --bzip2 -xf mozjs-24.2.0.tar.bz2
-cd mozjs-24.2.0
 ./configure
 make -j8
 make install
