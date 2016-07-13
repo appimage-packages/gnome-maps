@@ -90,6 +90,13 @@ cd intltool-0.40.3
 make -j8
 make install
 
+wget http://ftp.gnome.org/pub/gnome/sources/gobject-introspection/1.48/gobject-introspection-1.48.0.tar.xz
+tar xvf gobject-introspection-1.48.0.tar.xz
+cd gobject-introspection-1.48.0
+./configure
+make -j8
+make install
+
 APP=<%= name %>
 git clone git://git.gnome.org/<%= name %>
 cd <%= name %>
