@@ -97,10 +97,17 @@ cd gobject-introspection-1.48.0
 make -j8
 make install
 
+wget http://ftp.gnome.org/pub/gnome/sources/glib/2.48/glib-2.48.1.tar.xz
+tar xvf glib-2.48.1.tar.xz
+cd glib-2.48.1
+./configure
+make -j8
+make install
+
 APP=<%= name %>
 git clone git://git.gnome.org/<%= name %>
 cd <%= name %>
-ACLOCAL_FLAGS="-I /usr/share/aclocal -I /usr/local/share/aclocal" ./autogen.sh
+ACLOCAL_FLAGS="-I /usr/share/aclocal -I /usr/local/share/aclocal" PKG_CONFIG_PATH="/usr/local/lib/pkgconfig" ./autogen.sh
 make -j8
 make install
 
