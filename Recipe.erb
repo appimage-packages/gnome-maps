@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#get deps
+yum -y install gettext perl-URI.noarch gnome-common
+
 function make_dirs {
   mkdir -p "${1}"/"${1}.AppDir" || echo ""
 }
