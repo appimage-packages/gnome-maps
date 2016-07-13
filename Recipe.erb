@@ -93,7 +93,7 @@ make install
 APP=<%= name %>
 git clone git://git.gnome.org/<%= name %>
 cd <%= name %>
-./autogen.sh
+ACLOCAL_FLAGS="-I /usr/share/aclocal -I /usr/local/share/aclocal" ./autogen.sh
 make -j8
 make install
 
