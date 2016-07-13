@@ -82,12 +82,22 @@ function make_appdir {
   ./AppImageAssistant* "${1}.AppDir" "${1}_${2}.AppImage"
 }
 
+#deps
+wget http://ftp.gnome.org/pub/GNOME/sources/intltool/0.40/intltool-0.40.3.tar.gz
+tar xfv intltool-0.40.3.tar.gz
+cd intltool-0.40.3
+./configure
+make -j8
+make install
+
 APP=<%= name %>
 git clone git://git.gnome.org/<%= name %>
 cd <%= name %>
 ./autogen.sh
 make -j8
 make install
+
+cd ..
 
 VERSION=$(git describe | sed -e 's/-g.*$// ; s/^v//')
 cd ..
