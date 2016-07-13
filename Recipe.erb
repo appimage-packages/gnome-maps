@@ -155,6 +155,13 @@ cd atk-2.20.0
 make -j8
 make install
 
+wget http://www.freedesktop.org/software/harfbuzz/release/harfbuzz-1.2.7.tar.bz2
+tar --bzip2 -xf harfbuzz-1.2.7.tar.bz2
+cd harfbuzz-1.2.7
+./configure --with-gobject
+make -j8
+make install
+
 wget http://ftp.acc.umu.se/pub/gnome/sources/pango/1.37/pango-1.37.5.tar.xz
 tar xvf pango-1.37.5.tar.xz
 cd pango-1.37.5
