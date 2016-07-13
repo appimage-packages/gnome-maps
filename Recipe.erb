@@ -120,7 +120,7 @@ make install
 wget http://ftp.gnome.org/pub/gnome/sources/gobject-introspection/1.48/gobject-introspection-1.48.0.tar.xz
 tar xvf gobject-introspection-1.48.0.tar.xz
 cd gobject-introspection-1.48.0
-./configure
+./configure --with-python "/opt/rh/python27/root/usr/bin/python"
 make -j8
 make install
 
