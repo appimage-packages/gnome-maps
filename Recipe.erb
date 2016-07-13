@@ -98,6 +98,13 @@ cd libffi-3.2.1
 make -j8
 make install
 
+wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.39.tar.bz2
+tar --bzip2 -xf pcre-8.39.tar.bz2
+cd pcre-8.39
+./configure
+make -j8
+make install
+
 wget http://ftp.gnome.org/pub/gnome/sources/glib/2.48/glib-2.48.1.tar.xz
 tar xvf glib-2.48.1.tar.xz
 cd glib-2.48.1
