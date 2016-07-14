@@ -246,7 +246,7 @@ make install
 wget ftp://ftp.gnutls.org/gcrypt/gnutls/v3.3/gnutls-3.3.12.tar.xz
 tar xvf gnutls-3.3.12.tar.xz
 cd gnutls-3.3.12
-./configure
+./configure --with-libdir=lib64
 make -j8
 make install
 
