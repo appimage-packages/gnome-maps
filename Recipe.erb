@@ -4,7 +4,7 @@
 yum -y install perl-URI.noarch gnome-common perl-XML-Parser readline-devel nspr-devel pixman-devel \
 expat-devel libxml2-devel libtiff-devel libjpeg-turbo-devel libepoxy-devel
 
-yum groupinstall "Desktop Platform Development"
+yum -y groupinstall "Desktop Platform Development"
 
 function make_dirs {
   mkdir -p "${1}"/"${1}.AppDir" || echo ""
