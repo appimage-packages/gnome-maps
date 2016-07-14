@@ -206,6 +206,13 @@ cd dbus-1.10.8
 make -j8
 make install
 
+wget http://ftp.gnome.org/pub/GNOME/sources/at-spi/1.4/at-spi-1.4.2.tar.bz2
+tar --bzip2 -xf at-spi-1.4.2.tar.bz2
+cd at-spi-1.4.2
+./configure
+make -j8
+make install
+
 wget http://ftp.gnome.org/pub/gnome/sources/at-spi2-atk/2.20/at-spi2-atk-2.20.1.tar.xz
 tar xvf at-spi2-atk-2.20.1.tar.xz
 cd at-spi2-atk-2.20.1
