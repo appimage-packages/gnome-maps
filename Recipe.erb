@@ -2,7 +2,7 @@
 
 #get deps
 yum -y install perl-URI.noarch gnome-common perl-XML-Parser readline-devel nspr-devel pixman-devel \
-expat-devel libxml2-devel libtiff-devel libjpeg-turbo-devel libepoxy-devel dbus-devel
+expat-devel libxml2-devel libtiff-devel libjpeg-turbo-devel libepoxy-devel
 
 function make_dirs {
   mkdir -p "${1}"/"${1}.AppDir" || echo ""
@@ -195,6 +195,13 @@ make install
 wget http://ftp.gnu.org/pub/gnu/gettext/gettext-0.19.8.1.tar.xz
 tar xvf gettext-0.19.8.1.tar.xz
 cd gettext-0.19.8.1
+./configure
+make -j8
+make install
+
+wget http://dbus.freedesktop.org/releases/dbus/dbus-1.10.8.tar.gz
+tar xvzf dbus-1.10.8.tar.gz
+cd dbus-1.10.8
 ./configure
 make -j8
 make install
