@@ -246,14 +246,14 @@ make install
 wget https://ftp.gnu.org/gnu/nettle/nettle-3.2.tar.gz
 tar xvzf nettle-3.2.tar.gz
 cd nettle-3.2
-./configure
+./configure --disable-static
 make -j8
 make install
 
 wget ftp://ftp.gnutls.org/gcrypt/gnutls/v3.5/gnutls-3.5.2.tar.xz
 tar xvf gnutls-3.5.2.tar.xz
 cd gnutls-3.5.2
-LDFLAGS="-L /usr/local/lib64/" ./configure
+./configure
 make -j8
 make install
 
