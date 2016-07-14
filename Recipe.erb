@@ -2,7 +2,7 @@
 
 #get deps
 yum -y install perl-URI.noarch gnome-common perl-XML-Parser readline-devel nspr-devel pixman-devel \
-expat-devel libxml2-devel libtiff-devel libjpeg-turbo-devel libepoxy-devel libbonobo-devel gmp-devel
+expat-devel libxml2-devel libtiff-devel libjpeg-turbo-devel libepoxy-devel libbonobo-devel
 
 yum -y groupinstall "Desktop Platform Development"
 
@@ -236,6 +236,13 @@ cd json-glib-1.2.0
 make -j8
 make install
 
+wget https://ftp.gnu.org/gnu/gmp/gmp-6.1.1.tar.xz
+tar xvf gmp-6.1.1.tar.xz
+cd gmp-6.1.1
+./configure --enable-cxx
+make -j8
+make install
+
 wget http://ftp.gnu.org/gnu/nettle/nettle-2.7.1.tar.gz
 tar xvzf nettle-2.7.1.tar.gz
 cd nettle-2.7.1
@@ -246,7 +253,7 @@ make install
 wget ftp://ftp.gnutls.org/gcrypt/gnutls/v3.3/gnutls-3.3.12.tar.xz
 tar xvf gnutls-3.3.12.tar.xz
 cd gnutls-3.3.12
-LDFLAGS="-L/usr/local/lib64/" ./configure
+LDFLAGS="-L /usr/local/lib64/" ./configure
 make -j8
 make install
 
