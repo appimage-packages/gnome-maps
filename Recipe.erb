@@ -229,6 +229,20 @@ cd gtk+-3.20.6
 make -j8
 make install
 
+wget http://ftp.gnome.org/pub/gnome/sources/json-glib/1.2/json-glib-1.2.0.tar.xz
+tar xvf json-glib-1.2.0.tar.xz
+cd json-glib-1.2.0
+./configure
+make -j8
+make install
+
+wget http://ftp.gnome.org/pub/gnome/sources/libsoup/2.54/libsoup-2.54.1.tar.xz
+tar xvf libsoup-2.54.1.tar.xz
+cd libsoup-2.54.1
+./configure --disable-vala
+make -j8
+make install
+
 wget http://www.freedesktop.org/software/geoclue/releases/2.4/geoclue-2.4.3.tar.xz
 tar xvf geoclue-2.4.3.tar.xz
 cd geoclue-2.4.3
