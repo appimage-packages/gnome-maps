@@ -236,6 +236,13 @@ cd json-glib-1.2.0
 make -j8
 make install
 
+wget http://ftp.gnome.org/pub/gnome/sources/glib-networking/2.48/glib-networking-2.48.2.tar.xz
+tar xvf glib-networking-2.48.2.tar.xz
+cd glib-networking-2.48.2
+./configure
+make -j8
+make install
+
 wget http://ftp.gnome.org/pub/gnome/sources/libsoup/2.54/libsoup-2.54.1.tar.xz
 tar xvf libsoup-2.54.1.tar.xz
 cd libsoup-2.54.1
