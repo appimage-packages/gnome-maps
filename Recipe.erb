@@ -236,6 +236,13 @@ cd json-glib-1.2.0
 make -j8
 make install
 
+wget http://ftp.gnu.org/gnu/nettle/nettle-2.7.1.tar.gz
+tar xvzf nettle-2.7.1.tar.gz
+cd nettle-2.7.1
+./configure
+make -j8
+make install
+
 wget ftp://ftp.gnutls.org/gcrypt/gnutls/v3.3/gnutls-3.3.12.tar.xz
 tar xvf gnutls-3.3.12.tar.xz
 cd gnutls-3.3.12
