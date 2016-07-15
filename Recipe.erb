@@ -2,7 +2,7 @@
 
 #get deps
 yum -y install perl-URI.noarch gnome-common perl-XML-Parser readline-devel nspr-devel pixman-devel \
-expat-devel libxml2-devel libtiff-devel libjpeg-turbo-devel libepoxy-devel libbonobo-devel
+expat-devel libxml2-devel libtiff-devel libjpeg-turbo-devel libepoxy-devel libbonobo-devel p11-kit-devel
 
 yum -y groupinstall "Desktop Platform Development"
 
@@ -243,10 +243,10 @@ cd gmp-6.1.1
 make -j8
 make install
 
-wget https://ftp.gnu.org/gnu/nettle/nettle-3.2.tar.gz
-tar xvzf nettle-3.2.tar.gz
-cd nettle-3.2
-./configure --disable-static
+wget https://ftp.gnu.org/gnu/nettle/nettle-3.1.tar.gz
+tar xvzf nettle-3.1.tar.gz
+cd nettle-3.1
+./configure --disable-static --enable-shared
 make -j8
 make install
 
